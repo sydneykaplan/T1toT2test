@@ -108,7 +108,7 @@ def main(args):
     for i in range(numimgs):
         # get image affine matrix
         t1img = nib.load(t1imgpaths[i])
-        imgarr = tf.make_ndarray(t2pred[i, :, :, :, :])
+        imgarr = np.asarray(t2pred[i, :, :, :, :])
         img = nib.Nifti1Image(imgarr.reshape(t1img.shape), t1img.affine)
         nib.save(img, outdir + '/' + os.path.basename(os.path.splitext(t1imgpaths[i])[0]) + '_t2.nii.gz')
 
