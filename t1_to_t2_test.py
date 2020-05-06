@@ -109,7 +109,7 @@ def main(args):
         # get image affine matrix
         t1img = nib.load(t1imgpaths[i])
         img = nib.Nifti1Image(t2pred[i, :, :, :, :], t1img.affine)
-        nib.save(outdir + '/' + os.path.basename(os.path.splitext(t1imgpaths[i])[0]) + '_t2.nii.gz')
+        nib.save(img, outdir + '/' + os.path.basename(os.path.splitext(t1imgpaths[i])[0]) + '_t2.nii.gz')
 
 
 
