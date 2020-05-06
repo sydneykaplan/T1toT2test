@@ -102,7 +102,7 @@ def main(args):
         return tf.reduce_mean(tf.pow(actual_t2 - predicted_t2, 2))
 
     # get t2s
-    t2pred = cnn(t1imgs.reshape((numimgs, 208, 300, 320, 1)), weights, biases, numimgs)
+    t2pred = cnn(t1imgs.reshape((numimgs, 208, 300, 320, 1)), weights, biases, numimgs, num_nodes)
     
     # save out images
     for i in range(numimgs):
