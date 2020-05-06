@@ -92,7 +92,7 @@ def main(args):
     
     # read in images
     t1imgs, t1imgpaths = get_images(t1dir)
-    numimgs = len(t1imgs)
+    numimgs = t1imgs.shape[4]
     
     # parameters (MUST MATCH TRAINING PARAMETERS)
     kernel_size = 3
